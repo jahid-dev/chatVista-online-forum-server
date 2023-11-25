@@ -1,7 +1,7 @@
 const express = require("express");
-const bodyParser = require('body-parser');
+const applyMiddleware = require("./middlewares/applyMiddleware");
 const globalErrorHandler = require("./utils/globalErrorHandler");
-
+const connectDB = require("./db/connectDB");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
@@ -12,7 +12,7 @@ const port = process.env.PORT || 5000;
 // const userRoutes = require('./routes/userRoutes');
 // const adminRoutes = require('./routes/adminRoutes');
 
-app.use(bodyParser.json());
+applyMiddleware(app);
 
 // Define a simple route for the root
 app.get('/', (req, res) => {
@@ -36,6 +36,7 @@ app.all("*", (req, res, next) => {
 app.use(globalErrorHandler);
 
 const main = async () => {
+  await connectDB()
   app.listen(port, () => {
     console.log(`ChatVista Server is running on port ${port}`);
   });
