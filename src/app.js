@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 // Uncomment the following lines if you have route handlers
 // app.use('/auth', authRoutes);
 // app.use('/post', postRoutes);
-app.use('/users', userRoutes);
+app.use( userRoutes );
 // app.use('/admin', adminRoutes);
 
 // Handling all unhandled routes
