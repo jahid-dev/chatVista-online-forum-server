@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000;
 // Uncomment the following lines if you have route handlers
 // const authRoutes = require('./routes/authRoutes');
 // const postRoutes = require('./routes/postRoutes');
-// const userRoutes = require('./routes/userRoutes');
+const userRoutes = require('./routes/userRoutes');
 // const adminRoutes = require('./routes/adminRoutes');
 
 applyMiddleware(app);
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 // Uncomment the following lines if you have route handlers
 // app.use('/auth', authRoutes);
 // app.use('/post', postRoutes);
-// app.use('/user', userRoutes);
+app.use('/users', userRoutes);
 // app.use('/admin', adminRoutes);
 
 // Handling all unhandled routes
