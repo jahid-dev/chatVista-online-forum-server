@@ -8,7 +8,7 @@ const port = process.env.PORT || 5000;
 
 // Uncomment the following lines if you have route handlers
 // const authRoutes = require('./routes/authRoutes');
-// const postRoutes = require('./routes/postRoutes');
+const postRoutes = require('./routes/postRoutes');
 const userRoutes = require('./routes/userRoutes');
 // const adminRoutes = require('./routes/adminRoutes');
 
@@ -21,7 +21,7 @@ app.get('/', (req, res) => {
 
 // Uncomment the following lines if you have route handlers
 // app.use('/auth', authRoutes);
-// app.use('/post', postRoutes);
+app.use( postRoutes);
 app.use( userRoutes );
 // app.use('/admin', adminRoutes);
 
