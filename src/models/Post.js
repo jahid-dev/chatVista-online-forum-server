@@ -10,8 +10,8 @@ const PostsSchema = new Schema({
         required: true,
     },
     authorImg: {
-        type: String,
-    },
+      type: String, 
+  },
     postTitle: {
         type: String,
     },
