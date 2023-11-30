@@ -1,5 +1,10 @@
 // controllers/userController.js
+const Comments = require('../models/Comment');
+const Posts = require('../models/Post');
 const User = require('../models/User');
+;
+
+
 
 const getAdminStatus = async (req, res) => {
   const email = req.params.email;
@@ -39,5 +44,8 @@ const deleteUser = async (req, res) => {
     res.status(500).send({ error: error.message });
   }
 };
+
+
+
 
 module.exports = {  getAdminStatus, makeUserAdmin, deleteUser };

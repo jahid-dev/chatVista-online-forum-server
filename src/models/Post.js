@@ -1,57 +1,41 @@
-// posts.js
-const { Schema, model } = require('mongoose');
+const { Schema, model} = require('mongoose');
 
 const PostsSchema = new Schema({
-    authorName: {
+    authorName : {
         type: String,
     },
-    authorEmail: {
+    authorEmail : {
         type: String,
         required: true,
     },
-    authorImg: {
-      type: String, 
-  },
-    postTitle: {
+    authorImg : {
         type: String,
+    },
+    postTitle: {
+        type: String
     },
     postTime: {
-        type: String,
+        type: String
     },
     postImg: {
-        type: String,
+        type: String
     },
     postDescription: {
-        type: String,
+        type: String
     },
     tag: {
-        type: [String],
+        type: String
     },
     upVote: {
-        type: Number,
-        default: 0,
+        type: Number
     },
     downVote: {
-        type: Number,
-        default: 0,
+        type: Number
     },
     share: {
-        type: Number,
-        default: 0,
-    },
-    commentsCount: {
-        type: Number,
-        default: 0,
-    },
-    createdAt: {
-        type: Date,
-        default: Date.now,
-    },
-    updatedAt: {
-        type: Date,
-        default: Date.now,
-    },
-}, { timestamps: true });
+        type: Number
+    }
+});
 
 const Posts = model('Posts', PostsSchema);
 

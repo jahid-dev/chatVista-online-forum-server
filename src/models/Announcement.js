@@ -1,10 +1,23 @@
-const mongoose = require('mongoose');
+const { Schema, model} = require('mongoose');
 
-const announcementSchema = new mongoose.Schema({
-  author: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  title: String,
-  description: String,
-  // Add other necessary fields
+const AnnouncementsSchema = new Schema({
+    authorName: {
+        type: String,
+        required: true
+    },
+    authorImage:{
+        type: String,
+    },
+    title: {
+        type: String
+    }, 
+    description: {
+       type: String
+    }
+    
 });
 
-module.exports = mongoose.model('Announcement', announcementSchema);
+const Announcement = model('Announcement', AnnouncementsSchema);
+
+module.exports = Announcement;
+
